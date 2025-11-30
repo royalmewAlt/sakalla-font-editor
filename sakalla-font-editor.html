@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakalla Font Editor - 41 Beautiful Fonts</title>
+    <meta name="description" content="Preview and copy 41 beautiful fonts. Type any text and see it instantly in different typefaces.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@400;700&family=Lora:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Source+Serif+4:wght@400;700&family=Poppins:wght@400;600;700&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700&family=Inter:wght@400;500;700&family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&family=Outfit:wght@400;600;700&family=Geist:wght@400;600;700&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Fira+Code:wght@400;600;700&family=Roboto+Mono:wght@400;700&family=Source+Code+Pro:wght@400;700&family=IBM+Plex+Mono:wght@400;700&family=Geist+Mono:wght@400;700&family=Architects+Daughter&family=Oxanium:wght@400;700&family=Permanent+Marker&family=Black+Ops+One&family=Fredericka+the+Great&family=Creepster&family=Press+Start+2P&family=Tourney:wght@400;700&family=Dancing+Script:wght@400;700&family=Alfa+Slab+One&family=Bungee:wght@400;700&family=Bungee+Shade&family=Bungee+Inline&family=Bungee+Outline&family=Nabla&family=Kablammo:wght@400;700&family=Rubik+Moonrocks&family=Rubik+Wet+Paint&family=Stalinist+One" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 0 0% 3.6%;
+            --card: 0 0% 100%;
+            --card-foreground: 0 0% 3.6%;
+            --muted: 0 0% 96.1%;
+            --muted-foreground: 0 0% 45.1%;
+            --primary: 0 0% 9%;
+            --primary-foreground: 0 0% 100%;
+            --secondary: 0 0% 96.1%;
+            --secondary-foreground: 0 0% 9%;
+        }
+        
+        html.dark {
+            --background: 0 0% 3.6%;
+            --foreground: 0 0% 98%;
+            --card: 0 0% 10%;
+            --card-foreground: 0 0% 98%;
+            --muted: 0 0% 14.3%;
+            --muted-foreground: 0 0% 63.9%;
+            --primary: 0 0% 98%;
+            --primary-foreground: 0 0% 3.6%;
+            --secondary: 0 0% 14.3%;
+            --secondary-foreground: 0 0% 98%;
+        }
+        
+        body {
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .card {
+            background-color: hsl(var(--card));
+            color: hsl(var(--card-foreground));
+            border-radius: 0.375rem;
+            border: 1px solid hsl(var(--muted));
+        }
+        
+        .input {
+            background-color: hsl(var(--background));
+            border: 1px solid hsl(var(--muted));
+            color: hsl(var(--foreground));
+            border-radius: 0.375rem;
+            padding: 0.5rem 0.75rem;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        .input:focus {
+            outline: none;
+            border-color: hsl(var(--primary));
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        html.dark .input:focus {
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+        }
+        
+        .button {
+            background-color: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+            border: none;
+            border-radius: 0.375rem;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        
+        .button:active {
+            transform: translateY(0);
+        }
+        
+        .button-icon {
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.25rem;
+            height: 2.25rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: hsl(var(--secondary));
+            color: hsl(var(--secondary-foreground));
+            border-radius: 9999px;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .hover-elevate:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transform: translateY(-1px);
+        }
+        
+        html.dark .hover-elevate:hover {
+            box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(100, 150, 255, 0.1) 0%, rgba(150, 200, 255, 0.1) 50%, rgba(100, 150, 255, 0.05) 100%);
+        }
+        
+        html.dark .gradient-bg {
+            background: linear-gradient(135deg, rgba(100, 150, 255, 0.05) 0%, rgba(150, 200, 255, 0.05) 50%, rgba(100, 150, 255, 0.02) 100%);
+        }
+        
+        .shawarma-icon {
+            font-size: 1.5rem;
+        }
+        
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 1px solid hsl(var(--muted));
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <div id="app">
+        <!-- Header -->
+        <header class="sticky-header bg-opacity-95 backdrop-blur" style="background-color: hsl(var(--background));">
+            <div class="max-w-6xl mx-auto h-16 px-6 md:px-8 flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <span class="shawarma-icon">🌯</span>
+                    <h1 class="text-xl font-semibold">Sakalla Font Editor</h1>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span id="fontCount" class="badge hidden sm:inline-flex">41 fonts</span>
+                    <button id="themeToggle" class="button button-icon" title="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-6xl mx-auto px-6 md:px-8 py-12">
+            <!-- Featured Font Section -->
+            <section class="mb-16">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Text Input -->
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Your text</label>
+                        <input 
+                            type="text" 
+                            id="textInput" 
+                            class="input w-full" 
+                            placeholder="Type something..." 
+                            value="Shawarma"
+                        >
+                        <p class="text-xs text-muted-foreground mt-2">Default: "Shawarma"</p>
+                    </div>
+                    
+                    <!-- Random Font -->
+                    <div class="card p-8 text-center flex flex-col justify-center hover-elevate transition-all">
+                        <span class="text-xs uppercase tracking-widest mb-4" style="color: hsl(var(--muted-foreground));">
+                            <span id="randomFontName">Playfair Display</span>
+                        </span>
+                        <div 
+                            id="randomFontDisplay" 
+                            class="text-5xl md:text-6xl leading-tight break-all mb-6"
+                            style="font-family: 'Playfair Display', serif"
+                        >
+                            Shawarma
+                        </div>
+                        <span class="badge mb-4">serif</span>
+                        <button id="randomizeBtn" class="button">
+                            <i class="fas fa-shuffle"></i>
+                            Randomize Font
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Font Grid -->
+            <section>
+                <h2 class="text-lg font-semibold mb-6">All Fonts</h2>
+                <div id="fontGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Fonts will be injected here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="fixed bottom-4 right-4 card px-4 py-3 rounded-md shadow-lg hidden" style="animation: slideIn 0.3s ease-out;">
+            <div id="toastMessage"></div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(1rem);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <script>
+        // Font data
+        const fonts = [
+            // Serif
+            { name: "Playfair Display", family: "'Playfair Display', serif", category: "serif" },
+            { name: "Merriweather", family: "'Merriweather', serif", category: "serif" },
+            { name: "Lora", family: "'Lora', serif", category: "serif" },
+            { name: "Libre Baskerville", family: "'Libre Baskerville', serif", category: "serif" },
+            { name: "Source Serif 4", family: "'Source Serif 4', serif", category: "serif" },
+            
+            // Sans-serif
+            { name: "Poppins", family: "'Poppins', sans-serif", category: "sans-serif" },
+            { name: "Montserrat", family: "'Montserrat', sans-serif", category: "sans-serif" },
+            { name: "Open Sans", family: "'Open Sans', sans-serif", category: "sans-serif" },
+            { name: "Roboto", family: "'Roboto', sans-serif", category: "sans-serif" },
+            { name: "Inter", family: "'Inter', sans-serif", category: "sans-serif" },
+            { name: "DM Sans", family: "'DM Sans', sans-serif", category: "sans-serif" },
+            { name: "Plus Jakarta Sans", family: "'Plus Jakarta Sans', sans-serif", category: "sans-serif" },
+            { name: "Space Grotesk", family: "'Space Grotesk', sans-serif", category: "sans-serif" },
+            { name: "Outfit", family: "'Outfit', sans-serif", category: "sans-serif" },
+            { name: "Geist", family: "'Geist', sans-serif", category: "sans-serif" },
+            
+            // Monospace
+            { name: "Space Mono", family: "'Space Mono', monospace", category: "monospace" },
+            { name: "JetBrains Mono", family: "'JetBrains Mono', monospace", category: "monospace" },
+            { name: "Fira Code", family: "'Fira Code', monospace", category: "monospace" },
+            { name: "Roboto Mono", family: "'Roboto Mono', monospace", category: "monospace" },
+            { name: "Source Code Pro", family: "'Source Code Pro', monospace", category: "monospace" },
+            { name: "IBM Plex Mono", family: "'IBM Plex Mono', monospace", category: "monospace" },
+            { name: "Geist Mono", family: "'Geist Mono', monospace", category: "monospace" },
+            
+            // Display
+            { name: "Architects Daughter", family: "'Architects Daughter', cursive", category: "display" },
+            { name: "Oxanium", family: "'Oxanium', sans-serif", category: "display" },
+            { name: "Permanent Marker", family: "'Permanent Marker', cursive", category: "display" },
+            { name: "Black Ops One", family: "'Black Ops One', system-ui", category: "display" },
+            { name: "Fredericka the Great", family: "'Fredericka the Great', cursive", category: "display" },
+            { name: "Creepster", family: "'Creepster', system-ui", category: "display" },
+            { name: "Press Start 2P", family: "'Press Start 2P', system-ui", category: "display" },
+            { name: "Tourney", family: "'Tourney', system-ui", category: "display" },
+            { name: "Dancing Script", family: "'Dancing Script', cursive", category: "display" },
+            { name: "Alfa Slab One", family: "'Alfa Slab One', system-ui", category: "display" },
+            
+            // 3D & Special
+            { name: "Bungee", family: "'Bungee', system-ui", category: "3d" },
+            { name: "Bungee Shade", family: "'Bungee Shade', system-ui", category: "3d" },
+            { name: "Bungee Inline", family: "'Bungee Inline', system-ui", category: "3d" },
+            { name: "Bungee Outline", family: "'Bungee Outline', system-ui", category: "3d" },
+            { name: "Nabla", family: "'Nabla', system-ui", category: "3d" },
+            { name: "Kablammo", family: "'Kablammo', system-ui", category: "3d" },
+            { name: "Rubik Moonrocks", family: "'Rubik Moonrocks', system-ui", category: "3d" },
+            { name: "Rubik Wet Paint", family: "'Rubik Wet Paint', system-ui", category: "3d" },
+            { name: "Stalinist One", family: "'Stalinist One', system-ui", category: "3d" }
+        ];
+
+        // DOM elements
+        const textInput = document.getElementById('textInput');
+        const randomizeBtn = document.getElementById('randomizeBtn');
+        const randomFontDisplay = document.getElementById('randomFontDisplay');
+        const randomFontName = document.getElementById('randomFontName');
+        const fontGrid = document.getElementById('fontGrid');
+        const themeToggle = document.getElementById('themeToggle');
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+
+        // Theme management
+        function initTheme() {
+            const isDark = localStorage.getItem('theme') === 'dark' || 
+                          (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        // Random font picker
+        let currentRandomIndex = 0;
+        function getRandomFont() {
+            let newIndex;
+            do {
+                newIndex = Math.floor(Math.random() * fonts.length);
+            } while (newIndex === currentRandomIndex && fonts.length > 1);
+            currentRandomIndex = newIndex;
+            return fonts[newIndex];
+        }
+
+        function updateRandomFont() {
+            const font = getRandomFont();
+            randomFontDisplay.style.fontFamily = font.family;
+            randomFontDisplay.textContent = textInput.value || 'Shawarma';
+            randomFontName.textContent = font.name;
+            document.querySelector('.badge').textContent = font.category;
+        }
+
+        randomizeBtn.addEventListener('click', updateRandomFont);
+
+        // Text input handler
+        textInput.addEventListener('input', (e) => {
+            const text = e.target.value || 'Shawarma';
+            randomFontDisplay.textContent = text;
+            document.querySelectorAll('[data-font-text]').forEach(el => {
+                el.textContent = text;
+            });
+        });
+
+        // Render font grid
+        function renderFontGrid() {
+            fontGrid.innerHTML = fonts.map(font => `
+                <div class="card p-6 min-h-32 flex flex-col hover-elevate transition-all group">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs uppercase tracking-wider font-medium" style="color: hsl(var(--muted-foreground));">
+                            ${font.name}
+                        </span>
+                        <button class="button button-icon opacity-0 group-hover:opacity-100 transition-opacity copy-btn" data-font="${font.name}" title="Copy font name">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div 
+                        class="flex-1 flex items-center justify-center text-2xl md:text-3xl leading-tight text-center break-all"
+                        style="font-family: ${font.family}"
+                        data-font-text
+                    >
+                        ${textInput.value || 'Shawarma'}
+                    </div>
+                    <div class="mt-4 flex justify-center">
+                        <span class="badge">${font.category}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            // Add copy event listeners
+            document.querySelectorAll('.copy-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const fontName = btn.dataset.font;
+                    navigator.clipboard.writeText(fontName);
+                    showToast(`"${fontName}" copied to clipboard`);
+                });
+            });
+        }
+
+        // Toast notification
+        function showToast(message) {
+            toastMessage.textContent = message;
+            toast.classList.remove('hidden');
+            toast.classList.add('fade-in');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 2000);
+        }
+
+        // Initialize
+        initTheme();
+        updateRandomFont();
+        renderFontGrid();
+    </script>
+</body>
+</html>
