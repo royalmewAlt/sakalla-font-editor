@@ -5,6 +5,7 @@ services:
       branch: main
     build:
       builder: nixpacks
+      buildCommand: npm install && npm run build
     run:
       command: npm start
     env:
