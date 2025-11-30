@@ -2,7 +2,7 @@
 
 A web app that lets you type any text and instantly preview it in 41 beautiful fonts. Perfect for finding the right typeface for your projects.
 
-**Live Demo:** https://sakalla-font-editor.koyeb.app
+**Live Demo:** https://compulsory-bobcat-replitwebprojectandstuffnoiamnotrepl-de27cce8.koyeb.app/ (For Now Ig)
 
 ## Features
 
@@ -51,23 +51,23 @@ npm start
 
 
 ```
-⚤
-    ⨛ client/                # React frontend
-    ⨛ �� src/
-    ⩐」ˎ
-」もコプョン/
-    ⩐」ˎ
-」もソンサンウンしプョン/
-    ⩐」ˎ
-」もベャンほプョン.tsx
-    ⩐」ʾK> index.html
-⩐⨐☁server/              # Express backend
-⩐⨐☁�‾¬ index.ts          # Server setup
-⩐⨀☁�‾¬ routes.ts       # API routes
-⩐⨀☁�‾¬ storage.ts      # Data layer
-⩐⨀☁�‾¬ shared/               # Shared types
-⩐⨐☁�‾¬ schema.ts         # Font data
-⩐⨀☁�‾¬ package.json
+âš¤
+    â¨› client/                # React frontend
+    â¨› ûŠ src/
+    â©ã€ËŽ
+ã€ã‚‚ã‚³ãƒ—ãƒ§ãƒ³/
+    â©ã€ËŽ
+ã€ã‚‚ã‚½ãƒ³ã‚µãƒ³ã‚¦ãƒ³ã—ãƒ—ãƒ§ãƒ³/
+    â©ã€ËŽ
+ã€ã‚‚ãƒ™ãƒ£ãƒ³ã»ãƒ—ãƒ§ãƒ³.tsx
+    â©ã€Ê¾K> index.html
+â©â¨â˜server/              # Express backend
+â©â¨â˜¾â€¾Â¬ index.ts          # Server setup
+â©â¨€â˜»â€¾Â¬ routes.ts       # API routes
+â©â¨€â˜»â€¾Â¬ storage.ts      # Data layer
+â©â¨€â˜»â€¾Â¬ shared/               # Shared types
+â©â¨â˜¾â€¾Â¬ schema.ts         # Font data
+â©â¨€â˜»â€¾Â¬ package.json
 ```
 
 ## API Routes
@@ -82,7 +82,7 @@ npm start
 Playfair Display, Merriweather, Lora, Libre Baskerville, Source Serif 4
 
 ### Sans-Serif
-Poppins, Montserrat, Open Sans, Roboto, Inter, DM Sans, Plus Jakarta Seruf, Space Grotesk, Outfit, Geb��
+Poppins, Montserrat, Open Sans, Roboto, Inter, DM Sans, Plus Jakarta Seruf, Space Grotesk, Outfit, GebÉÝ
 
 ### Monospace
 Space Mono, JetBrains Mono, Fira Code, Roboto Mono, Source Code Pro, IBM Plex Mono, Geist Mono
@@ -111,4 +111,4 @@ MIT
 
 ## Author
 
-Created with ₠ for font lovers everywhere  𛌵
+Created with â‚  for font lovers everywhere  ð›Œµ
