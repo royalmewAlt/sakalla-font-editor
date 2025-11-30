@@ -1,0 +1,12 @@
+services:
+  - name: sakalla-font-editor
+    github:
+      repo: royalmewAlt/sakalla-font-editor
+      branch: main
+    build:
+      builder: nixpacks
+    run:
+      command: npm start
+    env:
+      - name: NODE_ENV
+        value: production
